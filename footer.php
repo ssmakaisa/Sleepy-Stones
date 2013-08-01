@@ -7,7 +7,7 @@
 				<p>&copy; The Idle Rocks Hotel <?=date("Y");?>. <a href="/cookies/">Cookies</a>. <a href="/terms-conditions/">Terms &amp; Conditions</a>.</p>
 			</div>
 			<div class="twenty-percent footerMobile">
-				<p>Website design and development by <a href="http://tribuscreative.com" target="_blank">Tribus</a>.</p>
+				<p>Website by <a href="http://tribuscreative.com" target="_blank">Tribus</a>.</p>
 			</div>
 		</div>
 		<div class="clear"></div>
