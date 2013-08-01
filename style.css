@@ -1,0 +1,1706 @@
+@charset "UTF-8";
+
+/* instagram photo wall styles here */
+@import url("photo-wall.css");
+
+/*
+Theme Name:Idle Rocks
+Description:Custom theme for Idle Rocks
+Author:Tribus Creative
+Version:1.0
+*/
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License:none (public domain)*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font:inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	display:block;
+}
+
+/* /////////////////////ICON FONTS FOR WEATHER ///////////////////////*/
+
+.hero-unit {
+	width: 150px;
+	float:right;
+	margin-top: -24px;
+	position: relative; 
+}
+
+#weather-container {
+	padding-top: 4px;
+}
+
+#w_iconimage {
+	float: left;
+	margin-right: 3px;
+	padding-top: 7px;
+}
+
+span.fs1 {
+	font-size: 4.5em; 
+	color: #A0CFEB;
+	width: 66px;
+	float: left;
+}
+
+#w_temp {
+	font-size: 1.5em;
+	padding-top: 9px;	
+}
+
+#w_summary {
+	font-size: .8em;
+}
+
+#w_special {
+	float: left;
+	display: none;
+	color: #FF6319;
+	font-size: 1em;
+	margin-top: -30px;
+	position: absolute;
+	left: -826px;
+	height: 31px;
+	width: 800px;
+	line-height: 1;
+	text-align: right;	
+}
+
+
+
+/*////////////////////// END ICON FONTS FOR WEATHER ///////////////////*/
+
+/*
+ * FancyBox - jQuery Plugin
+ * Simple and fancy lightbox alternative
+ *
+ * Examples and documentation at: http://fancybox.net
+ *
+ * Copyright (c) 2008 - 2010 Janis Skarnelis
+ * That said, it is hardly a one-person project. Many people have submitted bugs, code, and offered their advice freely. Their support is greatly appreciated.
+ * 
+ * Version: 1.3.4 (11/11/2010)
+ * Requires: jQuery v1.3+
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.gnu.org/licenses/gpl.html
+ */
+
+#fancybox-loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	margin-left: -20px;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 1104;
+	display: none;
+}
+
+#fancybox-loading div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 480px;
+	background-image: url('./fancybox/fancybox.png');
+}
+
+#fancybox-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1100;
+	display: none;
+}
+
+#fancybox-tmp {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: auto;
+	display: none;
+}
+
+#fancybox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	z-index: 1101;
+	outline: none;
+	display: none;
+}
+
+#fancybox-outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+}
+
+#fancybox-content {
+	width: 0;
+	height: 0;
+	padding: 0;
+	outline: none;
+	position: relative;
+	overflow: hidden;
+	z-index: 1102;
+	border: 0px solid #fff;
+}
+
+#fancybox-hide-sel-frame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	z-index: 1101;
+}
+
+#fancybox-close {
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	width: 30px;
+	height: 30px;
+	background: transparent url('./fancybox/fancybox.png') -40px 0px;
+	cursor: pointer;
+	z-index: 1103;
+	display: none;
+}
+
+#fancybox-error {
+	color: #444;
+	font: normal 12px/20px Arial;
+	padding: 14px;
+	margin: 0;
+}
+
+#fancybox-img {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	line-height: 0;
+	vertical-align: top;
+}
+
+#fancybox-frame {
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: block;
+}
+
+#fancybox-left, #fancybox-right {
+	position: absolute;
+	bottom: 0px;
+	height: 100%;
+	width: 35%;
+	cursor: pointer;
+	outline: none;
+	background: transparent url('./fancybox/blank.gif');
+	z-index: 1102;
+	display: none;
+}
+
+#fancybox-left {
+	left: 0px;
+}
+
+#fancybox-right {
+	right: 0px;
+}
+
+#fancybox-left-ico, #fancybox-right-ico {
+	position: absolute;
+	top: 50%;
+	left: -9999px;
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;
+	cursor: pointer;
+	z-index: 1102;
+	display: block;
+}
+
+#fancybox-left-ico {
+	background-image: url('./fancybox/fancybox.png');
+	background-position: -40px -30px;
+}
+
+#fancybox-right-ico {
+	background-image: url('./fancybox/fancybox.png');
+	background-position: -40px -60px;
+}
+
+#fancybox-left:hover, #fancybox-right:hover {
+	visibility: visible; /* IE6 */
+}
+
+#fancybox-left:hover span {
+	left: 20px;
+}
+
+#fancybox-right:hover span {
+	left: auto;
+	right: 20px;
+}
+
+.fancybox-bg {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 20px;
+	height: 20px;
+	z-index: 1001;
+}
+
+#fancybox-bg-n {
+	top: -20px;
+	left: 0;
+	width: 100%;
+	background-image: url('./fancybox/fancybox-x.png');
+}
+
+#fancybox-bg-ne {
+	top: -20px;
+	right: -20px;
+	background-image: url('./fancybox/fancybox.png');
+	background-position: -40px -162px;
+}
+
+#fancybox-bg-e {
+	top: 0;
+	right: -20px;
+	height: 100%;
+	background-image: url('./fancybox/fancybox-y.png');
+	background-position: -20px 0px;
+}
+
+#fancybox-bg-se {
+	bottom: -20px;
+	right: -20px;
+	background-image: url('./fancybox/fancybox.png');
+	background-position: -40px -182px; 
+}
+
+#fancybox-bg-s {
+	bottom: -20px;
+	left: 0;
+	width: 100%;
+	background-image: url('./fancybox/fancybox-x.png');
+	background-position: 0px -20px;
+}
+
+#fancybox-bg-sw {
+	bottom: -20px;
+	left: -20px;
+	background-image: url('./fancybox/fancybox.png');
+	background-position: -40px -142px;
+}
+
+#fancybox-bg-w {
+	top: 0;
+	left: -20px;
+	height: 100%;
+	background-image: url('./fancybox/fancybox-y.png');
+}
+
+#fancybox-bg-nw {
+	top: -20px;
+	left: -20px;
+	background-image: url('./fancybox/fancybox.png');
+	background-position: -40px -122px;
+}
+
+#fancybox-title {
+	font-family: Helvetica;
+	font-size: 12px;
+	z-index: 1102;
+}
+
+.fancybox-title-inside {
+	padding-bottom: 10px;
+	text-align: center;
+	color: #333;
+	background: #fff;
+	position: relative;
+}
+
+.fancybox-title-outside {
+	padding-top: 10px;
+	color: #fff;
+}
+
+.fancybox-title-over {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #FFF;
+	text-align: left;
+}
+
+#fancybox-title-over {
+	padding: 10px;
+	background-image: url('./fancybox/fancy_title_over.png');
+	display: block;
+}
+
+.fancybox-title-float {
+	position: absolute;
+	left: 0;
+	bottom: -20px;
+	height: 32px;
+}
+
+#fancybox-title-float-wrap {
+	border: none;
+	border-collapse: collapse;
+	width: auto;
+}
+
+#fancybox-title-float-wrap td {
+	border: none;
+	white-space: nowrap;
+}
+
+#fancybox-title-float-left {
+	padding: 0 0 0 15px;
+	background: url('./fancybox/fancybox.png') -40px -90px no-repeat;
+}
+
+#fancybox-title-float-main {
+	color: #FFF;
+	line-height: 29px;
+	font-weight: bold;
+	padding: 0 0 3px 0;
+	background: url('./fancybox/fancybox-x.png') 0px -40px;
+}
+
+#fancybox-title-float-right {
+	padding: 0 0 0 15px;
+	background: url('./fancybox/fancybox.png') -55px -90px no-repeat;
+}
+
+/* IE6 */
+
+.fancybox-ie6 #fancybox-close { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_close.png', sizingMethod='scale'); }
+
+.fancybox-ie6 #fancybox-left-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_nav_left.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-right-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_nav_right.png', sizingMethod='scale'); }
+
+.fancybox-ie6 #fancybox-title-over { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_title_over.png', sizingMethod='scale'); zoom: 1; }
+.fancybox-ie6 #fancybox-title-float-left { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_title_left.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-title-float-main { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_title_main.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-title-float-right { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_title_right.png', sizingMethod='scale'); }
+
+.fancybox-ie6 #fancybox-bg-w, .fancybox-ie6 #fancybox-bg-e, .fancybox-ie6 #fancybox-left, .fancybox-ie6 #fancybox-right, #fancybox-hide-sel-frame {
+	height: expression(this.parentNode.clientHeight + "px");
+}
+
+#fancybox-loading.fancybox-ie6 {
+	position: absolute; margin-top: 0;
+	top: expression( (-20 + (document.documentElement.clientHeight ? document.documentElement.clientHeight/2 : document.body.clientHeight/2 ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop )) + 'px');
+}
+
+#fancybox-loading.fancybox-ie6 div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_loading.png', sizingMethod='scale'); }
+
+/* IE6, IE7, IE8 */
+
+.fancybox-ie .fancybox-bg { background: transparent !important; }
+
+.fancybox-ie #fancybox-bg-n { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_shadow_n.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-ne { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_shadow_ne.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-e { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_shadow_e.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-se { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_shadow_se.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-s { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_shadow_s.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-sw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_shadow_sw.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-w { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_shadow_w.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-nw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_shadow_nw.png', sizingMethod='scale'); }
+
+
+.current-menu-item a, .current-page-ancestor a, body.archive .menu-item-450 a , body.archive .menu-item-450 , body.single-event .menu-item-449 a , body.single-accommodation .menu-item-447 a, body.single-post .menu-item-450 a {
+color:#FFF;
+}
+
+
+
+.captions{
+display:none;
+}
+
+.quote-wrapper {
+position: relative;
+margin: 0 auto;
+max-width: 960px;
+width: 100%;
+z-index: 50; }
+
+#headerCaption{
+position: absolute;
+z-index: 20;
+margin-top: 4%;
+/*float: left;
+margin: 0 auto;*/
+background: rgba(255, 255, 255, 0.8);
+/*left: 50%;*/
+display: block;
+/*top: 4%;*/
+width: 400px;
+font-size: 2em;
+padding: 2%;
+/*margin-left: -200px;*/
+line-height: 1.1;
+font-family: "proxima-nova";
+color: #0098db;
+}
+
+.clear{
+clear:both;
+}
+
+body,html{
+height:100%;
+font-size: 1em;
+line-height: 1.5em;
+font-family: "proxima-nova";
+}
+
+.navigationMobile{
+display:none;
+}
+
+img {
+max-width: 100%;
+}
+
+img.alignright, .eventListing img, .accomodation-image img {
+float: right;
+margin: .35em 0 .5em 1em;
+}
+
+img.alignleft {
+float: left;
+margin: .35em 1em .5em 0;
+}
+
+img.aligncenter, img.alignnone {
+clear: both;
+display: block;
+margin: 1.5em auto;
+}
+
+.headerImage img{
+	width: 100%;
+	height: auto;
+	max-width:1920px;
+}
+
+.headerImageSlideshow{
+    /*border-top:3px solid rgba(0, 0, 0, 0.8);
+    box-shadow:0 -20px 10px rgba(0, 0, 0, 0.4);*/
+	width: 100%;
+	max-width:1920px;
+	overflow:hidden;
+	height:820px;
+    position:relative;
+    z-index:3;
+}
+
+.headerImageSlideshow img{
+width: 100% !important;
+	height: auto !important;
+	max-width:1920px !important;
+}
+
+.background{
+	height: 100%;
+	width:100%;
+	position:absolute;
+}
+
+.logo{
+	width:100%;
+	position:absolute;
+	margin-top:-158px;
+	z-index: 3;
+}
+
+.logoWrapper{
+text-align:center;
+overflow:hidden;
+height:113px;
+    position:relative;
+    z-index:5;
+}
+
+.content {
+position:absolute;
+width:100%;
+z-index:1;
+max-width:1920px;
+background-color:#FFF;
+text-align:left;
+color:#8996A0;
+/*line-height:1.4em;*/
+}
+
+.contentBody{
+width:950px;
+max-width: 90%;
+margin:0 auto;
+margin-top:30px;
+}
+
+footer{
+width:950px;
+max-width: 90%;
+margin:0 auto;
+margin-bottom: 1.5em; }
+
+footer p {
+font-size: .75em; 
+font-family: "proxima-nova";}
+
+footer .twenty-percent p {
+text-align: right; }
+
+.wrapper{
+margin:0 auto;
+position:relative;
+text-align:center;
+max-width:1920px;
+}
+
+body.home .fullheaderImage {
+overflow: hidden;
+}
+
+.navigationWrapper{
+margin:0 auto;
+width:90%;
+max-width:950px;
+}
+
+.navigationMobile{
+margin:0 auto;
+max-width:90%;
+}
+
+#sub-menu-jump {
+display: none; }
+
+.navigation{
+	width:100%;
+	background-color:#A0CFEB;
+	padding-top:15px;
+	padding-bottom:15px;
+	margin-top:-45px;
+	text-transform:uppercase;
+	height:15px;
+	padding-left:0px;
+	position: relative;
+	z-index:10;
+	font-family: "proxima-nova";
+}
+
+
+.navigation a:hover{
+color:#FFF;
+text-decoration:none;
+}
+
+.navigation .active  a{
+color:#FFF;
+}
+
+
+.navigation ul li{
+float: left;
+list-style: none;
+margin-right: 8%;
+line-height: 1.1em;
+width: 10%;
+text-align: center;
+}
+
+.navigation ul li#menu-item-451 {
+margin-right:0;
+}
+
+.navigation ul li:first-child a {
+padding-left: 0; }
+
+.navigation ul li:last-child a {
+padding-right: 0; }
+
+/* layout stuff */
+
+
+.twenty-percent{
+float:left;
+width:20%;
+}
+
+.twenty-percent.right-margin{
+margin-right:5%;
+width:15%;
+}
+
+
+
+.thirty-percent{
+float:left;
+width:30%;
+position:relative;
+}
+
+.thirty-percent.right-margin{
+margin-right:5%;
+width:25%;
+}
+
+
+.forty-percent{
+float:left;
+width:40%;
+position:relative;
+}
+
+.forty-percent.right-margin{
+margin-right:5%;
+width:35%;
+}
+
+.fifty-percent{
+float:left;
+width:50%;
+position:relative;
+}
+
+.fifty-percent.right-margin{
+margin-right:5%;
+width:45%;
+}
+
+.sixty-percent{
+float:left;
+width:60%;
+position:relative;
+}
+
+.sixty-percent.right-margin{
+margin-right:5%;
+width:55%;
+}
+
+.seventy-percent{
+float:left;
+width:70%;
+position:relative;
+}
+
+.seventy-percent.right-margin{
+margin-right:5%;
+width:65%;
+}
+
+.eighty-percent{
+float:left;
+width:80%;
+position:relative;
+}
+
+.eighty-percent.right-margin{
+margin-right:5%;
+width:75%;
+}
+
+
+.hundred-percent{
+float:left;
+width:100%;
+position:relative;
+}
+
+.hundred-percent.right-margin{
+margin-right:5%;
+width:95%;
+}
+
+
+.top-pad{
+margin-top:40px;
+padding-top:10px;
+}
+
+.staff-photo {
+width: 48%;
+position: relative; 
+float: left;
+}
+
+.staff-photo.margin {
+width: 48%;
+margin-right: 4%;
+float: left;
+}
+
+/* end layout stuff */
+
+
+/* top nav highlighting */
+
+.page-id-5 .home-link a{
+color:#FFF;
+}
+
+.parent-pageid-11 .eat-link a{
+color:#FFF;
+}
+
+
+/* end top nav highlighting */
+
+/* a h1,h2 etc styling */
+
+p{
+margin-bottom: 1.5em;
+font-family: "proxima-nova", Georgia, serif;
+word-spacing: 1px;
+}
+
+strong {
+font-weight: bold; }
+
+em {
+font-style: italic; }
+
+.contentBody ul, ol {
+padding-left: 1.125em;
+margin-bottom: 1.5em; }
+
+blockquote {
+margin-left: 1.5em;
+border-left: 1px solid #AFD7EE;
+padding-left: 1.5em;
+font-style: italic; }
+
+hr {
+background: url(images/knot-divider.png) no-repeat center center;
+height: 32px;
+border: none;
+margin-bottom: 1.5em; }
+
+a{
+text-decoration:none;
+color:#0098db;
+-webkit-transition: all 0.25s ease-in-out;
+-moz-transition: all 0.25s ease-in-out;
+-ms-transition: all 0.25s ease-in-out;
+-o-transition: all 0.25s ease-in-out;
+transition: all 0.25s ease-in-out;
+}
+
+a:hover{
+color: #A0CFEB;
+}
+/*--- HEADINGS ---*/
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .8em;
+  font-family: "proxima-nova";
+}
+
+h1 {
+  font-size: 1.375em; /* 24px --> 24 ÷ 16 = 1.5 */
+  line-height: 1.2em; 
+  margin-bottom: 1em;
+  float: left;
+}
+
+h2 {
+  font-size: 1.25em; /* 22px --> 22 ÷ 16 = 1.375 */
+  line-height: 1.0909em; /* 24px --> 24 ÷ 22 = 1.090909(09) */
+}
+
+h3 {
+  font-size: 1.125em; /* 20px --> 20 ÷ 16 = 1.25 */
+  line-height: 1.2em; /* 24px --> 24 ÷ 20 = 1.2 */
+}
+
+h4 {
+  font-size: 1.015em; /* 18px --> 18 ÷ 16 = 1.125 */
+  line-height: 1.333em; /* 24px --> 24 ÷ 18 = 1.3333333(3) */
+}
+
+h5, h6 {
+  font-size: 1em; /* 16px --> 16 ÷ 16 = 1 */
+  line-height: 1.5em; /* 24px --> 24 ÷ 16 = 1.5 */
+}
+
+.eventListing h3, .accomodation-summary h3 {
+margin-bottom: 1em; }
+
+.top-line{
+border-top:1px solid #afd7ee;
+padding-top:15px;
+}
+
+
+ul.sub-menu{
+list-style:none;
+font-family: "proxima-nova";
+padding-left: 0;
+margin-bottom: 0;
+}
+
+.sub-menu li{
+margin-bottom:5px;
+}
+
+.sub-menu li.sub-selected a,
+.sub-menu li.current-cat a {
+color:#8895A0;
+}
+
+.sub-menu li.sub-selected a:hover{
+text-decoration:none;
+}
+
+	.mobileMenu{
+	display:none;
+	}
+
+
+/* NGI Added styling changes Fri 14 June 2013*/
+h1, h2, h3, h4, h5, h6 {
+	text-transform: uppercase;
+}
+.introText {
+	text-transform:none;
+}
+/*.sub-menu li {
+	text-transform:uppercase;
+}*/
+
+.tideInfo {
+margin-bottom: 10%; }
+
+#tideGraphic {
+	width:60px;
+	float:left;
+}
+#tideWaves {
+	width:100%;
+	position:relative;
+	/*background-image:url(http://idlerocks.tribusclient.com/wp-content/uploads/2013/06/buoy-2.png);
+	background-repeat:no-repeat;
+	position:relative;
+	overflow:hidden;*/
+}
+#tideWaves img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -o-transition: opacity .25s ease-in-out;
+  transition: opacity .25s ease-in-out;
+}
+
+#tideWaves img.top:hover {
+  opacity:0;
+}
+#tideTimes {
+	width:67%;
+	float: right;
+	margin-bottom:5%;
+}
+.tideEntry {
+	font-family:"proxima-nova";
+	text-align:left;
+	background-color:#fff;
+}
+
+/*   home page styling   */
+
+body.home .contentBody {
+margin: 0; }
+
+div.fullheaderImage {
+/*height: 200px;*/ }
+
+.moreLink {
+text-align: right; }
+
+.moreLink a {
+font-size: .9em; 
+font-family: "proxima-nova"; }
+
+.tideEntry {
+margin-bottom: 1%;
+font-size: .7em;
+padding: 1% 0;
+/*text-align: center;
+background-color: #FCE8C5;
+font-family: courier;*/ }
+
+.tideEntry:last-child {
+border-bottom: none; }
+
+
+/*   end home page styling */
+
+/* accomodation */
+
+.fifty-percent.accomodation-pictures {
+	width: 48%;
+	margin-right: 2%;
+}
+
+.fifty-percent.accomodation-details {
+ 
+}
+
+.fifty-percent.accomodation-details {
+width: 49%; }
+
+.accomodation-entry{
+float:left;
+width:48%;
+position:relative;
+margin-bottom:1.5em;
+}
+
+.accomodation-entry-margin{
+float:left;
+width:48%;
+margin-right:4%;
+position:relative;
+margin-bottom:1.5em;
+}
+
+.accomodation-summary{
+width:70%;
+position:relative;
+float:left;
+}
+
+.accomodation-summary p {
+margin-bottom: .5em; }
+
+.accomodation-summary p.rate-check,
+.accomodation-details p.rate-check {
+margin: 0; 
+font-family: "proxima-nova"; }
+
+.accomodation-image{
+width:30%;
+position:relative;
+float:left;
+}
+
+.room-available{
+color:#a7d2a6;
+}
+
+.room-unavailable{
+color:#d2ada6;
+}
+
+#availabilityForm select{
+text-transform:none !important;
+}
+
+#availabilityForm, #availabilityForm p {
+	font-family: "proxima-nova";
+}
+
+.loadingIcon{
+vertical-align:middle;
+display:none;
+}
+
+#availabilityFormMobile{
+display:none;
+}
+
+.accommodation-gallery {
+margin-right: 0 !important; }
+
+ul.accommodation-gallery-nav {
+padding-left: 0; }	
+
+.accommodation-gallery-nav li{
+list-style:none;
+display:inline-block;
+width:8px;
+height:7px;
+background-image:url("./images/gallery-off.png");
+background-repeat:no-repeat;
+margin-right:10px;
+cursor:pointer;
+}
+
+.accommodation-gallery-nav li.activeSlide{
+background-image:url("./images/gallery-on.png");
+}
+
+.slideChoose:hover{
+text-decoration:none;
+}
+
+.accommodation-gallery img{
+max-width:100% !important;
+}
+
+.mobileShow{
+display:none;
+}
+
+.booking-proceed{
+display:none; }
+
+.booking-proceed a {
+color: #FF6319; }
+
+.booking-proceed a:hover {
+color: rgba(255, 99, 25, 0.71); }
+
+.proceed-show{
+display:block;
+}
+
+#date-widget {
+background-color: #FCE8C5;
+padding: .25em 1em;
+max-width: 460px;
+float: right; }
+
+#date-widget p {
+font-family: "proxima-nova";
+font-size: .9em;
+margin: 0;
+text-align: center; }
+
+#date-widget p span.loading {
+height: 16px;
+width: 16px;
+display: inline-block; }
+
+h4.room-nav {
+float: right; }
+
+/* end accomodation */
+
+/* news styling */
+
+.archives ul {
+padding-left: 0; }
+
+.archives ul li {
+list-style-type: none;
+font-family: "proxima-nova"; }
+
+.newsItem .newsContent h3 {
+margin-bottom: 1em; }
+
+.newsItem .newsContent p.newsDate,
+.main-content p.newsDate {
+margin-bottom: 0; }
+
+.pageNav {
+margin: 1em 0;
+height: 25px; }
+
+.pageNav span.prev {
+display: block;
+float: left; }
+
+.pageNav span.next {
+display: block;
+float: right; }
+
+.pageNav span.prev a,
+.pageNav span.next a {
+font-family: "proxima-nova"; }
+
+/* end news styling */
+
+/* event styling */
+
+.eventBackLink {
+margin-bottom: 4% }
+
+.eventBackLink a {
+font-family: "proxima-nova"; }
+
+/* end event styling */
+
+/* contact page styling */
+
+#wpcf7-f393-p251-o1 p {
+font-family: "proxima-nova"; }
+
+#wpcf7-f393-p251-o1 p span.required {
+color: red; }
+
+input.wpcf7-text, textarea.wpcf7-textarea {
+	width: 80%;
+}
+
+/* end contact styling  */
+
+
+/*   social icons styling  */
+
+.social-icons {
+width: 300px;
+float: right;
+text-align: right; }
+
+.social-icons a img {
+opacity: 0.6; 
+-webkit-transition: all 0.25s ease-in-out;
+-moz-transition: all 0.25s ease-in-out;
+-ms-transition: all 0.25s ease-in-out;
+-o-transition: all 0.25s ease-in-out;
+transition: all 0.25s ease-in-out; }
+
+.social-icons a:hover img {
+opacity:0.4; }
+
+#googlemap {
+float: left;
+width:100%; }
+
+/*   end social icons styling */
+
+/* jquery UI */
+.datePicker{
+width:80px;
+}
+
+.ui-widget{
+font-size:80% !important;
+}
+
+/* end jquery UI */
+
+
+/* mobile */
+
+@media only screen and (min-width: 1919px) {
+	.content {
+		border-left: 1px solid #afd7ee;
+		border-right: 1px solid #afd7ee;
+		border-bottom: 1px solid #afd7ee;
+	}
+}
+
+@media only screen and (max-width: 1024px){
+
+	#tideTimes {
+		width: 100%;
+	}
+	
+	#buoy {
+		width: 70% !important;
+		margin-bottom: 4%;
+	}
+	
+	.accommodation-gallery, .accommodation-gallery div {
+		width: 100% !important;
+		height: auto !important;
+	}   
+    
+    .accommodation-gallery img {
+    	max-width: 100% !important;
+		width: 100% !important;
+		height: auto !important;
+	}	
+	
+}
+
+@media only screen and (max-width: 768px){
+	
+	.navigation ul li {
+		width: 9.2%;
+	}
+
+	.accomodation-image img{
+		max-width:100%;
+		height:100px;
+	}
+	
+	#col-subnav {
+		width: 25%; 
+		margin-right: 3%
+	}
+	
+	#col-main {
+		width: 72%;
+		margin-right: 0;
+	}
+	
+	#col-sidebar {
+		clear:both;
+		float: right;
+		width: 72%;
+		border-top: 1px solid #AFD7EE;
+		padding-top: 15px;
+	}
+	
+	#tideTimes {
+		width: 67%;
+	}
+	
+	.tideEntry {
+		padding: 0; 
+	}
+	
+	.tideInfo {
+		margin-bottom: 0; 
+	}
+		
+	#buoy {
+		width: 29% !important; 
+	}	
+}
+
+@media only screen and (max-width: 567px){
+	
+	.home .content {
+	position: relative;
+	}
+	
+	.navigationMobile{
+	display:block;
+	}
+	
+	.navigationDesktop{
+	display:none;
+	}
+	
+	.mobileSwitch{
+	float:none !important;
+	width:100% !important;
+	margin-right:0 !important;
+	}
+	
+	.eventListing{
+	width:100% !important;
+	}
+	
+	
+	.sub-menu li{
+	background-color:#f6f3f3;
+	padding:3px;
+	}
+	
+	.sub-menu li a{
+	display:block;
+	width:100%;
+	}
+	
+	.home .mobileButton {
+	display:none; 
+	}
+	
+	.mobileButton{
+	text-align:center;
+	margin-top:-12px;
+	}
+	
+	.mobileButton a{
+	display:block;
+	width:100%;
+	}
+	
+	.mobileMenu ul li{
+	width:100%;
+	margin-top:2px;
+	padding: 1.6% 0;
+	background-color:#FCE8C5;
+	text-align: center;
+	}
+	
+	.mobileMenu ul li a{
+	display:block;
+	width:100%;
+	}
+	
+	.footerMobile{
+	width:100% !important;
+	text-align: center;
+	}
+	
+	footer section p {
+	margin-bottom: 0;
+	}
+	
+	footer .twenty-percent p {
+	text-align: center; }
+	
+	.accomodation-image {
+	display: none; }
+	
+	.accomodation-image img{
+	max-width:100%;
+	height:100px;
+	}
+	
+	.accomodation-summary {
+		width: 100% !important;
+	}
+	
+	.accomodation-summary h3{
+		margin: 0 0 1% 0;
+	}
+	
+	.accomodation-summary .description {
+		display: none; 
+	}
+	
+	.mobileShow{
+		display:block;
+	}
+	
+	#sub-menu-jump {
+		display: block;
+		float: right;
+		font-size: .8em;
+	}
+	
+	#sub-menu-jump2 {
+		display: block;
+		float: right;
+		font-size: .8em;
+		margin-top: -38px;
+	}	
+
+	#w_special {
+		left: -2826px;
+	}
+	
+	#col-sidebar iframe {
+		display:none; 
+	}
+
+	#date-widget {
+		padding: 0.25em 0;
+		max-width: 100%;
+		width: 80%;
+		margin: 0;
+	}
+	
+	#date-widget .widget-title {
+		display:none;
+	}
+	
+	#date-widget p {
+		font-size: .8em;
+	}
+	
+	.datePicker {
+		width: 58px; 
+	}
+	
+	#ui-datepicker-div {
+		position: relative !important;
+		margin: 0px auto !important;
+		top: auto !important;
+		left: auto !important;
+	}
+
+	.accomodation-entry,
+	.accomodation-entry-margin {
+		text-align: center;
+	}
+	
+	.accomodation-entry.end-block {
+		border-top: 1px solid #AFD7EE;
+		margin-top: 3%;
+		padding-top: 3%;
+	}
+    
+    .home .mobileMenu {
+		display:block; 
+	}
+	
+	.hero-unit {
+		margin-right: 42px;
+		margin-top: -42px;
+	}
+	
+	.forty-percent.contact, .sixty-percent.directions {
+		width: 100%;
+	}
+
+	.accommodation-gallery, .accommodation-gallery div {
+		/*width: 320px !important;*/
+		height: 220px !important;
+		margin-bottom: 30px;
+	}  	
+	
+	.social-icons {
+		display: none;
+	}
+	
+}
+
+/*  Buoy Animation on Explore pages */
+
+#frame {
+	width: 29%;
+	height: 100px;
+	overflow: hidden;
+	position: relative;
+	float:left;
+}
+#frame li {
+	list-style-type: none; 
+}
+#frame li#water-back {
+	width: 1200px;
+	height: 50px;
+	background-image: url(./images/buoy/water-back.png);
+	background-repeat: repeat-x;
+	background-position-x: 17%;
+	z-index: 1;
+	position: absolute;
+	bottom: 0px;
+	left: -50px;
+}
+.tideInfo:hover #frame li#water-back {
+	-webkit-animation: water-back-animation 3s infinite ease-in-out;
+	-moz-animation: water-back-animation 3s infinite ease-in-out;
+	-o-animation: water-back-animation 3s infinite ease-in-out;
+	-ms-animation: water-back-animation 3s infinite ease-in-out;
+	animation: water-back-animation 3s infinite ease-in-out;
+}
+#frame li#water-front {
+	width: 1200px;
+	height: 127px;
+	background-image: url(./images/buoy/water-front.png);
+	background-repeat: repeat-x;
+	z-index: 3;
+	position: absolute;
+	bottom: -83px;
+	left:-30px;
+}
+.tideInfo:hover #frame li#water-front {
+	-webkit-animation: water-front-animation 2s infinite ease-in-out;
+	-moz-animation: water-front-animation 2s infinite ease-in-out;
+	-o-animation: water-front-animation 2s infinite ease-in-out;
+	-ms-animation: water-front-animation 2s infinite ease-in-out;
+	animation: water-front-animation 2s infinite ease-in-out;
+}
+#frame ul#buoy {
+	width: 249px;
+	height: 215px;
+	z-index: 2;
+	position: absolute;
+	bottom: 2px;
+	left: 4px;
+	overflow: visible;
+	margin-bottom: 0;
+}
+#frame ul#buoy li {
+	width: 61px;
+	height: 96px;
+	background-image: url(images/buoy/buoy1.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	overflow: visible;
+}
+.tideInfo:hover #frame ul#buoy li {
+	-webkit-animation: boat-animation 2s infinite ease-in-out;
+	-moz-animation: boat-animation 2s infinite ease-in-out;
+	-o-animation: boat-animation 2s infinite ease-in-out;
+	-ms-animation: boat-animation 2s infinite ease-in-out;
+	animation: boat-animation 2s infinite ease-in-out;
+}
+	
+/* WebKit Animations */
+
+@-webkit-keyframes boat-animation {
+	0%   {bottom: 0px; left: 0px;}
+	25%  {bottom: -2px; left: -2px;}
+	70%  {bottom: 2px; left: -4px;}
+	100% {bottom: -1px; left: 0px;}
+}
+@-webkit-keyframes water-back-animation {
+	0%   {bottom: 0px; left: -20px;}
+	25%  {bottom: -2px; left: -22px;}
+	70%  {bottom: 2px; left: -24px;}
+	100% {bottom: -1px; left: -20px;}
+}
+@-webkit-keyframes water-front-animation {
+	0%   {bottom: -83px; left: -230px;}
+	25%  {bottom: -81px; left: -232px;}
+	70%  {bottom: -85px; left: -234px;}
+	100% {bottom: -80px; left: -230px;}
+}
+
+/* FireFox Animations */
+
+@-moz-keyframes boat-animation {
+	0%   {bottom: 0px; left: 0px;}
+	25%  {bottom: -2px; left: -2px;}
+	70%  {bottom: 2px; left: -4px;}
+	100% {bottom: -1px; left: 0px;}
+}
+@-moz-keyframes water-back-animation {
+	0%   {bottom: 0px; left: -20px;}
+	25%  {bottom: -2px; left: -22px;}
+	70%  {bottom: 2px; left: -24px;}
+	100% {bottom: -1px; left: -20px;}
+}
+@-moz-keyframes water-front-animation {
+	0%   {bottom: -83px; left: -230px;}
+	25%  {bottom: -81px; left: -232px;}
+	70%  {bottom: -85px; left: -234px;}
+	100% {bottom: -80px; left: -230px;}
+}
+
+/* Opera Animations */
+
+@-o-keyframes boat-animation {
+	0%   {bottom: 0px; left: 0px;}
+	25%  {bottom: -2px; left: -2px;}
+	70%  {bottom: 2px; left: -4px;}
+	100% {bottom: -1px; left: 0px;}
+}
+@-o-keyframes water-back-animation {
+	0%   {bottom: 0px; left: -20px;}
+	25%  {bottom: -2px; left: -22px;}
+	70%  {bottom: 2px; left: -24px;}
+	100% {bottom: -1px; left: -20px;}
+}
+@-o-keyframes water-front-animation {
+	0%   {bottom: -83px; left: -230px;}
+	25%  {bottom: -81px; left: -232px;}
+	70%  {bottom: -85px; left: -234px;}
+	100% {bottom: -80px; left: -230px;}
+}
+
+/* IE Animations */
+
+@-ms-keyframes boat-animation {
+	0%   {bottom: 0px; left: 0px;}
+	25%  {bottom: -2px; left: -2px;}
+	70%  {bottom: 2px; left: -4px;}
+	100% {bottom: -1px; left: 0px;}
+}
+@-ms-keyframes water-back-animation {
+	0%   {bottom: 0px; left: -20px;}
+	25%  {bottom: -2px; left: -22px;}
+	70%  {bottom: 2px; left: -24px;}
+	100% {bottom: -1px; left: -20px;}
+}
+@-ms-keyframes water-front-animation {
+	0%   {bottom: -83px; left: -230px;}
+	25%  {bottom: -81px; left: -232px;}
+	70%  {bottom: -85px; left: -234px;}
+	100% {bottom: -80px; left: -230px;}
+}
+
+/* Animations */
+
+@keyframes boat-animation {
+	0%   {bottom: 0px; left: 0px;}
+	25%  {bottom: -2px; left: -2px;}
+	70%  {bottom: 2px; left: -4px;}
+	100% {bottom: -1px; left: 0px;}
+}
+@keyframes water-back-animation {
+	0%   {bottom: 0px; left: -20px;}
+	25%  {bottom: -2px; left: -22px;}
+	70%  {bottom: 2px; left: -24px;}
+	100% {bottom: -1px; left: -20px;}
+}
+@keyframes water-front-animation {
+	0%   {bottom: -83px; left: -230px;}
+	25%  {bottom: -81px; left: -232px;}
+	70%  {bottom: -85px; left: -234px;}
+	100% {bottom: -80px; left: -230px;}
+}
+
+/*  end buoy animation  */
+
+
+/*  photo wall styling  */
+
+#photo_wall {
+    background-color: #A0CFEB;
+    width:100%;
+    z-index:100;
+    position:absolute;
+    overflow:hidden;
+    overflow-y: scroll !important;
+    margin-top:-3000px;
+}
+
+#photo_wall_photos {
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: black;
+}
+
+#photo_wall_toggle {
+    font-family: "proxima-nova", arial;
+    text-transform:uppercase;
+    font-weight:400;
+    background-color: #A0CFEB;
+    font-size:12px;
+    display:block;
+    cursor: pointer;
+    width:140px;
+    padding:5px 12px;
+    text-align:center;
+    color: #0098db;
+    z-index:101;
+    position:absolute;
+    right: 0;
+}
+
+#photo_wall_toggle:hover {
+    color:#fff;
+}
+
+.handle {
+    display:none;
+    width:35px;
+    height:14px;
+    position:relative;
+    top:2px;
+    margin-right:4px;
+}
+
+.handle-text {
+    line-height:30px;
+    display:inline-block;
+}

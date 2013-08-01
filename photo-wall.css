@@ -1,0 +1,51 @@
+#photo_wall {
+    background-color: #A0CFEB;
+    width:100%;
+    z-index:100;
+    position:absolute;
+    overflow:hidden;
+    overflow-y: scroll !important;
+    margin-top:-3000px;
+}
+
+#photo_wall_photos {
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: black;
+}
+
+#photo_wall_toggle {
+    font-family: "proxima-nova", arial;
+    text-transform:uppercase;
+    font-weight:400;
+    background-color: #A0CFEB;
+    font-size:12px;
+    display:block;
+    cursor: pointer;
+    width:140px;
+    padding:5px 12px;
+    text-align:center;
+    color: #0098db;
+    z-index:101;
+    position:absolute;
+    right: 0;
+}
+
+#photo_wall_toggle:hover {
+    color:#fff;
+}
+
+.handle {
+    display:none;
+    width:35px;
+    height:14px;
+    position:relative;
+    top:2px;
+    margin-right:4px;
+}
+
+.handle-text {
+    line-height:30px;
+    display:inline-block;
+}
